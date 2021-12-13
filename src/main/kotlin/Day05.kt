@@ -2,10 +2,6 @@ import java.lang.Math.max
 import kotlin.math.abs
 
 
-data class Point(
-    val x: Int,
-    val y: Int
-)
 
 val regEx = "^([0-9]+),([0-9]+) -> ([0-9]+),([0-9]+)$".toRegex()
 
