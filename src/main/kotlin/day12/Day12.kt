@@ -1,3 +1,5 @@
+import util.ResLoader
+
 typealias CaveSystem = List<Pair<String,String>>
 
 typealias Route = List<String>
