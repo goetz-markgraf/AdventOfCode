@@ -1,3 +1,9 @@
+package day11
+
+import util.Matrix
+import util.ResLoader
+import util.matrixFromInput
+
 fun Matrix.processCharging() {
     for (row in 0 until this.size)
         for (col in 0 until this[0].size)

@@ -1,7 +1,12 @@
+package day12
+
+import createCaveSystem
+import findRoutes
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.DynamicTest
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestFactory
+import util.ResLoader
 
 class Day12Test {
     val inputA = ResLoader.readlines("input_test_12_a")
@@ -41,7 +46,8 @@ class Day12Test {
             val routes = findRoutes(
                 system,
                 listOf(listOf("start")),
-                true)
+                true
+            )
             assertThat(routes).hasSize(it.second)
         } }
 }

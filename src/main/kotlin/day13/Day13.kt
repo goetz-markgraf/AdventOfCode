@@ -1,3 +1,6 @@
+import util.Point
+import util.ResLoader
+
 data class FoldInstruction(
     val horizontal: Boolean,
     val position: Int
@@ -62,7 +65,6 @@ fun pointsToString(p: List<Point>): String {
     }
 }
 
-// LKREBPRK
 
 fun day13() {
     println ("Day13\nFolding\n==============")
@@ -81,4 +83,5 @@ fun day13() {
     }
 
     println ("Message:\n${pointsToString(finalResult)}")
+    // LKREBPRK
 }

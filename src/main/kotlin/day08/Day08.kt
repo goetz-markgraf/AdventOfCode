@@ -1,3 +1,7 @@
+package day08
+
+import util.ResLoader
+
 private fun subtract(longer: String, shorter: String): List<Char> {
     val ret = mutableListOf<Char>()
     longer.forEach { if (shorter.indexOf(it) < 0) ret.add(it) }
@@ -32,7 +36,7 @@ private fun findSegements(input: List<String>): Map<String, Char> {
     val sortedHaeufigkeiten = haeufigkeiten.toList().sortedBy { it.second }
 //    print(" -> ${sortedHaeufigkeiten}")
 
-    val segA = subtract(sortedInput[1], sortedInput[0]).first()
+//    val segA = subtract(sortedInput[1], sortedInput[0]).first()
     val segB = sortedHaeufigkeiten[1].first
     val segE = sortedHaeufigkeiten[0].first
     val segF = sortedHaeufigkeiten[6].first
@@ -79,7 +83,7 @@ private fun parse(input: List<String>, map: Map<String, Char>): Int {
 
     sortedInput.forEach { ret.append(map[it]) }
 
-    return ret.toString().toInt() ?: -1
+    return ret.toString().toInt()
 }
 
 private fun part2(input: List<String>) {

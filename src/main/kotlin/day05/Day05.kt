@@ -1,3 +1,7 @@
+package day05
+
+import util.Point
+import util.ResLoader
 import java.lang.Math.max
 import kotlin.math.abs
 
@@ -48,15 +52,19 @@ private fun range(from: Int, to: Int) =
         to..from
     }
 
+private fun fillStraightLine(field: Array<IntArray>, from: Point, to: Point) {
+    for (i in range(from.x, to.x))
+        for (j in range(from.y, to.y))
+            field[j][i]++
+
+}
 
 private fun fillLines(field: Array<IntArray>, lines: List<Pair<Point, Point>>) {
     lines.forEach {
         val from = it.first
         val to = it.second
         if (straightLine(it)) {
-            for (i in range(from.x, to.x))
-                for (j in range(from.y, to.y))
-                    field[j][i]++
+            fillStraightLine(field, from, to)
         } else {
             val distance = abs(to.x - from.x)
             val deltaX = if (from.x < to.x) 1 else -1

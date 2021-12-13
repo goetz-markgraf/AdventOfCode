@@ -1,3 +1,5 @@
+package util
+
 typealias Matrix = Array<IntArray>
 
 data class RC(

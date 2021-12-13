@@ -1,7 +1,10 @@
+package day10
+
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.DynamicTest
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestFactory
+import util.ResLoader
 
 class Day10Test {
     @Test

@@ -1,3 +1,8 @@
+package day09
+
+import util.*
+import util.RC
+
 fun createHeightMatrix(input: List<String>) =
     input.map { line ->
         line.toCharArray().map { it.digitToInt() }.toIntArray()
@@ -40,7 +45,7 @@ fun findLowestSpotsLocations(matrix: Matrix): List<RC> {
 }
 
 fun calculateRiskLevel(matrix: Matrix, inNumbers: List<RC>) =
-    inNumbers.map { matrix[it.row][it.col] + 1 }.sum()
+    inNumbers.sumOf { matrix[it.row][it.col] + 1 }
 
 private fun doIfExistingAndNewAndNot9(matrix: Matrix, rc: RC, found: List<RC>, action: (RC) -> Unit) {
     if (rc.inMatrix(matrix) && !found.contains(rc) && matrix.get(rc) < 9)

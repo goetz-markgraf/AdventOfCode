@@ -1,3 +1,6 @@
+package day10
+
+import util.ResLoader
 import java.util.*
 
 private val openings = arrayOf(

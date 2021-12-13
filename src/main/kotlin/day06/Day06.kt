@@ -1,3 +1,7 @@
+package day06
+
+import util.ResLoader
+
 val MAX_AGE = 9
 
 private fun processPopulation(population: LongArray) {

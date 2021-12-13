@@ -1,5 +1,9 @@
+package day11
+
+import util.matrixFromInput
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
+import util.ResLoader
 
 class Day11Test {
     private val input = ResLoader.readlines("input_test_11")

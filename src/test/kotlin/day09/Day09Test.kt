@@ -1,7 +1,11 @@
+package day09
+
+import util.RC
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.DynamicTest
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestFactory
+import util.ResLoader
 
 class Day09Test {
     private val input = ResLoader.readlines("input_test_09")
