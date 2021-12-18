@@ -30,3 +30,26 @@ fun matrixFromInput(input: List<String>) =
             }
         }.toIntArray()
     }.toTypedArray()
+
+
+class Matrix2(
+    val matrix: Matrix
+) {
+    val maxCol: Int
+        get() = matrix[0]?.size ?: -1
+
+    val maxRow: Int
+        get() = matrix.size
+
+    fun get(rc: RC) =
+        matrix.get(rc)
+
+    fun inMatrix(rc: RC) =
+        rc.inMatrix(matrix)
+
+    companion object {
+        fun fromInput(input: List<String>) =
+            Matrix2(matrixFromInput(input))
+
+    }
+}
