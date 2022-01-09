@@ -1,3 +1,5 @@
+package day13
+
 import util.Point
 import util.ResLoader
 
@@ -13,20 +15,20 @@ data class TransparentResult(
 
 private fun parseFold(line: String): FoldInstruction {
     if (!line.startsWith("fold along "))
-        return FoldInstruction(true,-1)
+        return FoldInstruction(true, -1)
     val rest = line.substring(11)
 
     val (direction, positionString) = rest.split("=")
 
     return FoldInstruction(
-        horizontal = direction.lowercase()=="y",
+        horizontal = direction.lowercase() == "y",
         position = positionString.toInt()
     )
 }
 
 fun parseTransparentInput(input: List<String>): TransparentResult {
     val inputPoints = input.takeWhile { it.trim() != "" }
-    val inputFolds = input.drop(inputPoints.size+1)
+    val inputFolds = input.drop(inputPoints.size + 1)
 
     return TransparentResult(
         foldInstructions = inputFolds.map(::parseFold),
@@ -39,14 +41,14 @@ fun parseTransparentInput(input: List<String>): TransparentResult {
 fun foldPoint(p: Point, fold: FoldInstruction) =
     when {
         fold.horizontal && p.y >= fold.position ->
-            Point(p.x, p.y - 2*(p.y-fold.position))
+            Point(p.x, p.y - 2 * (p.y - fold.position))
         !fold.horizontal && p.x >= fold.position ->
-            Point(p.x-2*(p.x-fold.position), p.y)
+            Point(p.x - 2 * (p.x - fold.position), p.y)
         else -> p
     }
 
 fun doFold(input: List<Point>, fold: FoldInstruction) =
-    input.map { foldPoint(it, fold)  }.distinct()
+    input.map { foldPoint(it, fold) }.distinct()
 
 fun isPoint(points: List<Point>, x: Int, y: Int) =
     points.any { it.x == x && it.y == y }
@@ -66,8 +68,8 @@ fun pointsToString(p: List<Point>): String {
 }
 
 
-fun day13() {
-    println ("Day13\nFolding\n==============")
+fun main() {
+    println("Day13\nFolding\n==============")
 
     val input = ResLoader.readlines("input_13")
     val parseInput = parseTransparentInput(input)
@@ -78,10 +80,10 @@ fun day13() {
 
     val parseInput2 = parseTransparentInput(input)
 
-    val finalResult = parseInput2.foldInstructions.fold(parseInput2.points) {
-        points, next -> doFold(points, next)
+    val finalResult = parseInput2.foldInstructions.fold(parseInput2.points) { points, next ->
+        doFold(points, next)
     }
 
-    println ("Message:\n${pointsToString(finalResult)}")
+    println("Message:\n${pointsToString(finalResult)}")
     // LKREBPRK
 }

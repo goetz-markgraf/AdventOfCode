@@ -1,7 +1,5 @@
 package day12
 
-import createCaveSystem
-import findRoutes
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.DynamicTest
 import org.junit.jupiter.api.Test
@@ -27,12 +25,14 @@ class Day12Test {
             Pair(inputA, 10),
             Pair(inputB, 19),
             Pair(inputC, 226)
-        ).map { DynamicTest.dynamicTest("${it.second}") {
-            val system = createCaveSystem(it.first)
+        ).map {
+            DynamicTest.dynamicTest("${it.second}") {
+                val system = createCaveSystem(it.first)
 
-            val routes = findRoutes(system, listOf(listOf("start")))
-            assertThat(routes).hasSize(it.second)
-        } }
+                val routes = findRoutes(system, listOf(listOf("start")))
+                assertThat(routes).hasSize(it.second)
+            }
+        }
 
     @TestFactory
     fun `shall find all routes in the given cave systems in the enhanced way`() =
@@ -40,14 +40,16 @@ class Day12Test {
             Pair(inputA, 36),
             Pair(inputB, 103),
             Pair(inputC, 3509)
-        ).map { DynamicTest.dynamicTest("${it.second}") {
-            val system = createCaveSystem(it.first)
+        ).map {
+            DynamicTest.dynamicTest("${it.second}") {
+                val system = createCaveSystem(it.first)
 
-            val routes = findRoutes(
-                system,
-                listOf(listOf("start")),
-                true
-            )
-            assertThat(routes).hasSize(it.second)
-        } }
+                val routes = findRoutes(
+                    system,
+                    listOf(listOf("start")),
+                    true
+                )
+                assertThat(routes).hasSize(it.second)
+            }
+        }
 }

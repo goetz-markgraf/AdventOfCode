@@ -17,7 +17,7 @@ private fun fuelNeededToMove(from: Int, to: Int): Int {
 private fun calculateFuel(toPosition: Int, positions: IntArray) =
     positions.foldIndexed(0) { i, acc, next -> acc + next * fuelNeededToMove(i, toPosition) }
 
-fun day07() {
+fun main() {
     println("Day 07:\nCrab Submarines\n=====================")
 
     val input = ResLoader.readlines("input_07").first().split(",").map { it.toInt() }

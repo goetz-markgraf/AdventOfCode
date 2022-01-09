@@ -1,12 +1,8 @@
 package day13
 
-import FoldInstruction
-import util.Point
-import doFold
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
-import parseTransparentInput
-import pointsToString
+import util.Point
 import util.ResLoader
 
 class Day13Test {
@@ -36,8 +32,7 @@ class Day13Test {
     fun `fold until letter comes out`() {
         val parseResult = parseTransparentInput(input)
 
-        val result = parseResult.foldInstructions.fold(parseResult.points) {
-            points, next ->
+        val result = parseResult.foldInstructions.fold(parseResult.points) { points, next ->
             doFold(points, next)
         }
 
@@ -45,13 +40,15 @@ class Day13Test {
 
         val text = pointsToString(result)
 
-        assertThat(text).isEqualTo("""
+        assertThat(text).isEqualTo(
+            """
             █████
             █   █
             █   █
             █   █
             █████
             
-        """.trimIndent())
+        """.trimIndent()
+        )
     }
 }

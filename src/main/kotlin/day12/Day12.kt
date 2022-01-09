@@ -1,6 +1,8 @@
+package day12
+
 import util.ResLoader
 
-typealias CaveSystem = List<Pair<String,String>>
+typealias CaveSystem = List<Pair<String, String>>
 
 typealias Route = List<String>
 
@@ -26,8 +28,8 @@ private fun isRouteWrong(route: Route) =
 private fun getCaves(system: CaveSystem, cave: String) =
     system.mapNotNull {
         if (it.first == cave) it.second
-    else if (it.second == cave) it.first
-    else null
+        else if (it.second == cave) it.first
+        else null
     }
 
 private fun mayVisitThisCave(route: Route, cave: String): Boolean {
@@ -38,7 +40,7 @@ private fun mayVisitThisCave(route: Route, cave: String): Boolean {
             || !lowercaseCaves.keys.contains(cave)
 }
 
-fun findRoutes(system: CaveSystem, routes: List<Route>, mayVisitSmallCaveTwice: Boolean = false) : List<Route> {
+fun findRoutes(system: CaveSystem, routes: List<Route>, mayVisitSmallCaveTwice: Boolean = false): List<Route> {
     if (routes.isEmpty()) return emptyList()
 
     val head = routes.first()
@@ -55,8 +57,7 @@ fun findRoutes(system: CaveSystem, routes: List<Route>, mayVisitSmallCaveTwice: 
     }.filter {
         if (!mayVisitSmallCaveTwice) {
             (!it.isLowercase() || !head.contains(it))
-        }
-        else {
+        } else {
             mayVisitThisCave(head, it)
         }
     }
@@ -69,7 +70,7 @@ fun findRoutes(system: CaveSystem, routes: List<Route>, mayVisitSmallCaveTwice: 
     return findRoutes(system, allRoutes, mayVisitSmallCaveTwice)
 }
 
-fun day12() {
+fun main() {
     println("Day12\nCaves\n=================")
 
     val system = createCaveSystem(
@@ -83,7 +84,8 @@ fun day12() {
     val routesEnhanced = findRoutes(
         system,
         listOf(listOf("start")),
-        true)
+        true
+    )
 
     println("Number of Routes: ${routesEnhanced.size}")
 }

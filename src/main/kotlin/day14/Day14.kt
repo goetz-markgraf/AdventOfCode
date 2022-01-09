@@ -155,7 +155,7 @@ fun countLetters(first: Char, elementGroups: ElementGroup) =
 fun findLowestAndHighest(map: Map<Char, Long>) =
     Pair(map.minOf { it.value }, map.maxOf { it.value })
 
-fun day14() {
+fun main() {
     println("\nDay14\nPolymer\n==================")
 
     val input = ResLoader.readlines("input_14")

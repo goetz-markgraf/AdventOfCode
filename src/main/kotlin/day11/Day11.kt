@@ -51,7 +51,7 @@ fun Matrix.processFlashing(): Int {
     return ret
 }
 
-fun day11() {
+fun main() {
     println("Day11\nCharging Squid\n==============")
 
     val input = ResLoader.readlines("input_11")

@@ -17,4 +17,7 @@ class ResLoader {
 data class Point(
     val x: Int,
     val y: Int
-)
+) {
+    fun translate(dx: Int, dy: Int) =
+        Point(x + dx, y + dy)
+}

@@ -13,7 +13,7 @@ private fun processPopulation(population: LongArray) {
     population[MAX_AGE - 3] += birth
 }
 
-fun day06() {
+fun main() {
     println("Day 06:\nLanternfish\n=====================")
 
     val input = ResLoader.readlines("input_06").first().split(",").map { it.toInt() }.toList()

@@ -11,8 +11,17 @@ class Day15Test {
 
     @Test
     fun `find path with lowest risk test`() {
-        val riskLevel = findLowestPath(matrix)
+        val riskLevel = findLowestRiskLevel(matrix)
 
         assertThat(riskLevel).isEqualTo(40)
+    }
+
+    @Test
+    fun `find path with lowest risk in enlarged matrix`() {
+        val enlargedMatrix = enlarge(matrix)
+
+        val riskLevel = findLowestRiskLevel(enlargedMatrix)
+
+        assertThat(riskLevel).isEqualTo(315)
     }
 }

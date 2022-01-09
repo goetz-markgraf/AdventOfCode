@@ -47,6 +47,10 @@ class Matrix2(
     fun inMatrix(rc: RC) =
         rc.inMatrix(matrix)
 
+    fun set(pos: RC, value: Int) {
+        matrix[pos.row][pos.col] = value
+    }
+
     companion object {
         fun fromInput(input: List<String>) =
             Matrix2(matrixFromInput(input))

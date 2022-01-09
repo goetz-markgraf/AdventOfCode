@@ -99,7 +99,7 @@ fun findMiddleValue(input: List<Long>): Long {
     return sorted.elementAt(middle)
 }
 
-fun day10() {
+fun main() {
     println("Day10\nNested Paranthese\n===================")
 
     val input = ResLoader.readlines("input_10")

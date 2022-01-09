@@ -113,7 +113,7 @@ private fun part1(input: List<String>) {
 
 }
 
-fun day08() {
+fun main() {
     println("Day 08:\nDigits\n=====================")
 
     val input = ResLoader.readlines("input_08")

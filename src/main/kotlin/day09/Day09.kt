@@ -1,7 +1,9 @@
 package day09
 
-import util.*
+import util.Matrix
 import util.RC
+import util.ResLoader
+import util.get
 
 fun createHeightMatrix(input: List<String>) =
     input.map { line ->
@@ -83,7 +85,7 @@ fun findLargest3Basins(basinSizes: List<Int>) =
 fun calculateSum(basinSizes: List<Int>) =
     findLargest3Basins(basinSizes).fold(1L) { acc, next -> acc * next }
 
-fun day09() {
+fun main() {
     println("Day 09 – Sea floor hightmap\n=======================")
 
     val input = ResLoader.readlines("input_09")

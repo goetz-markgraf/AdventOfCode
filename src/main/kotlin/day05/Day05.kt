@@ -6,7 +6,6 @@ import java.lang.Math.max
 import kotlin.math.abs
 
 
-
 val regEx = "^([0-9]+),([0-9]+) -> ([0-9]+),([0-9]+)$".toRegex()
 
 
@@ -97,7 +96,7 @@ private fun countValuesOver(field: Array<IntArray>, threshold: Int): Int {
 }
 
 
-fun day05() {
+fun main() {
     println("Day 05:\n=====================")
 
     val input = ResLoader.readlines("input_05")

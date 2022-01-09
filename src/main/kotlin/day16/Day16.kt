@@ -142,7 +142,7 @@ fun value(packet: Packet): Long =
     }
 
 
-fun day16() {
+fun main() {
     val parser = BitwiseReader(ResLoader.readText("input_16").reader())
 
     val packet = parser.getNextPacket()
